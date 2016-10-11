@@ -1,1 +1,70 @@
-test3
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Instant Search</title>
+<style>
+
+#quicksearch {
+	
+	width:500px;	
+	
+}
+
+#records {
+	
+	width:500px;	
+	
+}
+
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	
+	$("#quicksearch").bind('keyup', function() {
+		
+		var val = $(this).val();
+		$(".record").hide();
+		
+		$(".record").each(function() {
+			
+			var text = $(this).text();
+			
+			if (text.indexOf(val)!=-1) {
+				
+				$(this).show();	
+				
+				
+			}
+			
+			
+		});
+		
+		
+	});
+	
+	
+});
+
+</script>
+</head>
+<body>
+
+<input type="text" id="quicksearch" /> <br />
+<div id="records">
+
+	<div class="record">Amy</div>
+    <div class="record">Bill</div>
+    <div class="record">Bryan</div>
+    <div class="record">Chad</div>
+    <div class="record">Chris</div>
+    <div class="record">Frank</div>
+    <div class="record">Gary</div>
+
+</div>
+
+</body>
+
+</html>
